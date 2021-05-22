@@ -10,7 +10,7 @@
         android:id="@+id/labelSignup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="105dp"
+        android:layout_marginTop="60dp"
         android:text="JOIN"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -86,10 +86,12 @@
         android:id="@+id/textPasswordErrorJoin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="@+id/editTextPasswordJoin"
         app:layout_constraintStart_toStartOf="@+id/editTextPasswordJoin"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPasswordJoin" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPasswordJoin"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:id="@+id/labelPasswordConfirmJoin"

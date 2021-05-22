@@ -1,11 +1,13 @@
 package com.b11a.android.autosaver.login
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.ViewModelProvider
+import com.b11a.android.autosaver.MainActivity
 import com.b11a.android.autosaver.databinding.ActivityJoinContactBinding
 import com.b11a.android.autosaver.kPrefs
 import com.b11a.android.autosaver.login.models.UserDetail
@@ -36,7 +38,8 @@ class JoinContactActivity : AppCompatActivity() {
 
         viewModel.success.observe(this) {
             if (it) {
-                //TODO : MOVE TO ACTIVITY
+                startActivity(Intent(this, MainActivity::class.java))
+                finish()
             }
         }
 

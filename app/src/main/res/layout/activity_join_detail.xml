@@ -10,7 +10,7 @@
         android:id="@+id/labelDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="105dp"
+        android:layout_marginTop="60dp"
         android:text="JOIN"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,7 +46,7 @@
         android:id="@+id/textBloodErrorJoin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text=""
         app:layout_constraintEnd_toEndOf="@+id/spinnerBloodDetail"
         app:layout_constraintStart_toStartOf="@+id/spinnerBloodDetail"
         app:layout_constraintTop_toBottomOf="@+id/spinnerBloodDetail" />
@@ -80,7 +80,7 @@
         android:id="@+id/textSpecialErrorDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text=""
         app:layout_constraintEnd_toEndOf="@+id/spinnerSpecialDetail"
         app:layout_constraintStart_toStartOf="@+id/spinnerSpecialDetail"
         app:layout_constraintTop_toBottomOf="@+id/spinnerSpecialDetail" />
@@ -114,7 +114,7 @@
         android:id="@+id/textMedicalErrorDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text=""
         app:layout_constraintEnd_toEndOf="@+id/editTextMedicalDetail"
         app:layout_constraintStart_toStartOf="@+id/editTextMedicalDetail"
         app:layout_constraintTop_toBottomOf="@+id/editTextMedicalDetail" />
@@ -148,7 +148,7 @@
         android:id="@+id/textMedicationErrorDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text=""
         app:layout_constraintEnd_toEndOf="@+id/editTextMedicationDetail"
         app:layout_constraintStart_toStartOf="@+id/editTextMedicationDetail"
         app:layout_constraintTop_toBottomOf="@+id/editTextMedicationDetail" />

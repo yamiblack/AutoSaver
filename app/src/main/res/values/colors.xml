@@ -15,6 +15,7 @@
     <color name="buttonHintTextColor">#A2E2FF</color>
 
     <color name="textColor">#45c5ff</color>
+    <color name="boldTextColor">#4564FF</color>
 
     <color name="accentColor">#C7956d</color>
     <color name="subColor">#965D62</color>

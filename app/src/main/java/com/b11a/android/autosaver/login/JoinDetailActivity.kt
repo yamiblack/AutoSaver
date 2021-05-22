@@ -43,6 +43,7 @@ class JoinDetailActivity : AppCompatActivity() {
         binding.buttonCompletionDetail.setOnClickListener {
             startActivity(Intent(this, JoinContactActivity::class.java)
                 .putExtra("detail", viewModel.detail.value))
+            finish()
         }
     }
 }
