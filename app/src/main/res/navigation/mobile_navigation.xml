@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_analysis">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.b11a.android.autosaver.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/navigation_analysis"
+        android:name="com.b11a.android.autosaver.ui.analysis.AnalysisFragment"
+        android:label="@string/title_analysis"
+        tools:layout="@layout/fragment_analysis" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.b11a.android.autosaver.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_driving"
+        android:name="com.b11a.android.autosaver.ui.driving.DrivingFragment"
+        android:label="@string/title_driving"
+        tools:layout="@layout/fragment_driving_start" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.b11a.android.autosaver.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_mypage"
+        android:name="com.b11a.android.autosaver.ui.mypage.MyPageFragment"
+        android:label="@string/title_mypage"
+        tools:layout="@layout/fragment_mypage" />
 </navigation>
