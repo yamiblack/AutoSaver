@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.ViewModelProvider
 import com.b11a.android.autosaver.JoinStatus
+import com.b11a.android.autosaver.MainActivity
 import com.b11a.android.autosaver.databinding.ActivityLoginBinding
 import com.b11a.android.autosaver.kPrefs
 
@@ -45,7 +46,7 @@ class LoginActivity : AppCompatActivity() {
         viewModel.success.observe(this) {
             if(it != JoinStatus.FAIL)
                 startActivity(Intent(this, when(it) {
-                        JoinStatus.SUCCESS -> JoinDetailActivity::class.java
+                        JoinStatus.SUCCESS -> MainActivity::class.java
                         JoinStatus.NEED -> JoinDetailActivity::class.java
                         else -> null
                     }
