@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/AutoSaver.iml" filepath="$PROJECT_DIR$/.idea/modules/AutoSaver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AutoSaver.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AutoSaver.app.iml" />
     </modules>
   </component>
 </project>
