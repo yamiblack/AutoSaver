@@ -21,6 +21,7 @@ public class DrivingFragment extends Fragment {
 
         View root = inflater.inflate(R.layout.fragment_driving_start, container, false);
 
+        //test
         return root;
     }
 
