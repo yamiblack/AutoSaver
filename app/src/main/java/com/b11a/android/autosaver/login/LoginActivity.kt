@@ -34,7 +34,7 @@ class LoginActivity : AppCompatActivity() {
 
         viewModel.userToken.observe(this) {
             it?.let {
-                kPrefs(binding.root.context).edit().putString("userToken", "Token $it").apply()
+                kPrefs(this).edit().putString("userToken", "Token $it").apply()
             }
         }
 
@@ -46,7 +46,10 @@ class LoginActivity : AppCompatActivity() {
         viewModel.success.observe(this) {
             if(it != JoinStatus.FAIL)
                 startActivity(Intent(this, when(it) {
-                        JoinStatus.SUCCESS -> MainActivity::class.java
+                        JoinStatus.SUCCESS -> {
+                            kPrefs(this).edit().putBoolean("autoLogin", binding.switchAutoLogin.isChecked).apply()
+                            MainActivity::class.java
+                        }
                         JoinStatus.NEED -> JoinDetailActivity::class.java
                         else -> null
                     }
