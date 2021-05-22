@@ -1,14 +1,20 @@
 package com.b11a.android.autosaver
 
+import android.content.Context
+import android.content.SharedPreferences
+import androidx.preference.PreferenceManager
 import java.lang.Exception
 import java.security.MessageDigest
 
-val serverURL = "https://junction-auto.com/"
+enum class JoinStatus { FAIL, SUCCESS, NEED }
 
-fun sha(str: String): String {
+fun kServerURL(path: String): String = "https://junction-auto.com/$path/?format=json"
+fun kPrefs(context: Context): SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
+
+fun hashSHA256(str: String): String {
     var result: String
     try {
-        val md = MessageDigest.getInstance("SHA")
+        val md = MessageDigest.getInstance("SHA-256")
         md.update(str.toByteArray(charset("UTF-8")))
 
         val byteData = md.digest()
