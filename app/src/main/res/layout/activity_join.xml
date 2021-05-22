@@ -6,4 +6,156 @@
     android:layout_height="match_parent"
     tools:context=".login.JoinActivity">
 
+    <TextView
+        android:id="@+id/labelSignup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="JOIN"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/labelEmailJoin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="54dp"
+        android:text="E-Mail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelSignup" />
+
+    <EditText
+        android:id="@+id/editTextEmailJoin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="62dp"
+        android:layout_marginLeft="62dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginRight="62dp"
+        android:background="@drawable/edittext_border"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelEmailJoin" />
+
+    <TextView
+        android:id="@+id/textEmailErrorJoin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/editTextEmailJoin"
+        app:layout_constraintStart_toStartOf="@+id/editTextEmailJoin"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmailJoin" />
+
+    <TextView
+        android:id="@+id/labelPasswordJoin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textEmailErrorJoin" />
+
+    <EditText
+        android:id="@+id/editTextPasswordJoin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/edittext_border"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextEmailJoin"
+        app:layout_constraintStart_toStartOf="@+id/editTextEmailJoin"
+        app:layout_constraintTop_toBottomOf="@+id/labelPasswordJoin" />
+
+    <TextView
+        android:id="@+id/textPasswordErrorJoin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPasswordJoin"
+        app:layout_constraintStart_toStartOf="@+id/editTextPasswordJoin"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPasswordJoin"
+        android:gravity="center_horizontal" />
+
+    <TextView
+        android:id="@+id/labelPasswordConfirmJoin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Confirm Password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textPasswordErrorJoin" />
+
+    <EditText
+        android:id="@+id/editTextPasswordConfirmJoin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/edittext_border"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPasswordJoin"
+        app:layout_constraintStart_toStartOf="@+id/editTextPasswordJoin"
+        app:layout_constraintTop_toBottomOf="@+id/labelPasswordConfirmJoin" />
+
+    <TextView
+        android:id="@+id/textPasswordConfirmErrorJoin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPasswordConfirmJoin"
+        app:layout_constraintStart_toStartOf="@+id/editTextPasswordConfirmJoin"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPasswordConfirmJoin" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonNextJoin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/radius_button_white"
+        android:minHeight="38dp"
+        android:text="Next"
+        android:textColor="@color/buttonTextColor"
+        app:layout_constraintBottom_toTopOf="@+id/labelPageJoin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/labelPageJoin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="72dp"
+        android:fontFamily="sans-serif-black"
+        android:text="1/2"
+        android:textColor="@color/buttonTextColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <include
+        android:id="@+id/loadingLayout"
+        android:visibility="gone"
+        layout="@layout/layout_loading" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

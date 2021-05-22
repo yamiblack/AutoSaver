@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bloodType">
+        <item>A</item>
+        <item>B</item>
+        <item>AB</item>
+        <item>O</item>
+    </string-array>
+
+    <string-array name="specialNote">
+        <item>None</item>
+        <item>Pregnant Woman</item>
+        <item>Elderly person</item>
+        <item>Disability 1st degree</item>
+        <item>Disability 2nd degree</item>
+        <item>Disability 3rd degree</item>
+        <item>Disability 4st degree</item>
+        <item>Disability 5st degree</item>
+    </string-array>
+</resources>

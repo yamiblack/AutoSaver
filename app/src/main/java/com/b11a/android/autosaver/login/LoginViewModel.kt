@@ -4,17 +4,17 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.b11a.android.autosaver.login.models.UserJoin
+import com.b11a.android.autosaver.JoinStatus
+import com.b11a.android.autosaver.hashSHA256
 import com.b11a.android.autosaver.login.models.UserLogin
-import com.b11a.android.autosaver.serverURL
-import com.b11a.android.autosaver.sha
+import com.b11a.android.autosaver.kServerURL
 import okhttp3.*
 import org.json.JSONObject
 import java.io.IOException
-import java.util.regex.Pattern
 
 class LoginViewModel: ViewModel() {
-    private val loginURL = serverURL + "rest-auth/login"
+    private val loginURL = kServerURL("rest-auth/login")
+    private val userURL = kServerURL("users/userinfos")
     private val client = OkHttpClient()
 
     private val _login = MutableLiveData<UserLogin>().apply {
@@ -37,20 +37,25 @@ class LoginViewModel: ViewModel() {
     }
     val errorLogin: LiveData<UserLogin> = _errorLogin
 
+    private val _success = MutableLiveData<JoinStatus>().apply {
+        value = JoinStatus.FAIL
+    }
+    val success: LiveData<JoinStatus> = _success
+
     fun setEmail(email: String) {
-        login.value?.email = email
+        _login.value?.email = email
     }
 
     fun setPassword(password: String) {
-        login.value?.password = sha(password)
+        _login.value?.password = password
     }
 
     fun login() {
         _logining.value = true
 
         val requestBody = FormBody.Builder()
-            .add("email", login.value!!.email)
-            .add("password", login.value!!.password)
+            .add("email", _login.value!!.email)
+            .add("password", hashSHA256(_login.value!!.password))
             .build()
         val request = Request.Builder()
             .url(loginURL)
@@ -65,14 +70,15 @@ class LoginViewModel: ViewModel() {
             }
 
             override fun onResponse(call: Call, response: Response) {
-                val jsonObject = JSONObject(response.body.toString())
+                val responseString = response.body!!.string()
+                Log.d("LOGIN", responseString)
 
-                (jsonObject["key"] as String?)?.let {
-                    _userToken.postValue(it)
-                } ?: run {
-                    checkInvalid(jsonObject)
-                }
-                _logining.postValue(false)
+                val jsonObject = JSONObject(responseString)
+
+                if (jsonObject.has("key")) {
+                    _userToken.postValue(jsonObject.getString("key"))
+                    checkDetail()
+                } else checkInvalid(jsonObject)
             }
         })
     }
@@ -80,9 +86,38 @@ class LoginViewModel: ViewModel() {
     fun checkInvalid(result: JSONObject) {
         val error = UserLogin()
 
-        error.email = result.getString("email")
-        error.password = result.getString("password")
+        if(result.has("email")) error.email = result.getJSONArray("email").getString(0)
+        if(result.has("password")) error.password = result.getJSONArray("password").getString(0)
+        if(result.has("non_field_errors")) error.email = result.getJSONArray("non_field_errors").getString(0)
 
         _errorLogin.postValue(error)
+    }
+
+    fun checkDetail() {
+        val request = Request.Builder()
+            .url(userURL)
+            .header("Authorization", "Token ${_userToken.value!!}")
+            .build()
+
+        client.newCall(request).enqueue(object : Callback {
+            override fun onFailure(call: Call, e: IOException) {
+                Log.e("LOGIN", e.toString())
+                _logining.postValue(false)
+                return
+            }
+
+            override fun onResponse(call: Call, response: Response) {
+                val responseString = response.body!!.string()
+                Log.d("LOGIN", responseString)
+
+                val jsonObject = JSONObject(responseString)
+
+                _success.postValue(
+                    if(jsonObject.getString("blood").isEmpty()) JoinStatus.NEED
+                    else JoinStatus.SUCCESS
+                )
+                _logining.postValue(false)
+            }
+        })
     }
 }
