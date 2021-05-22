@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/labelBloodMyPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BloodType"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/spinnerBloodMyPage"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginLeft="62dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginRight="62dp"
+        android:background="@drawable/edittext_border"
+        android:entries="@array/bloodType"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelBloodMyPage" />
+
+    <TextView
+        android:id="@+id/labelSpecialMyPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:text="Special Note"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerBloodMyPage" />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/spinnerSpecialMyPage"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginLeft="62dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginRight="62dp"
+        android:background="@drawable/edittext_border"
+        android:entries="@array/specialNote"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelSpecialMyPage" />
+
+    <TextView
+        android:id="@+id/labelMedicalMyPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:text="Medical History"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerSpecialMyPage" />
+
+    <EditText
+        android:id="@+id/editTextMedicalMyPage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/edittext_border"
+        android:ems="10"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/spinnerBloodMyPage"
+        app:layout_constraintStart_toStartOf="@+id/spinnerBloodMyPage"
+        app:layout_constraintTop_toBottomOf="@+id/labelMedicalMyPage" />
+
+    <TextView
+        android:id="@+id/labelMedicationMyPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:text="Medication Taken"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextMedicalMyPage" />
+
+    <EditText
+        android:id="@+id/editTextMedicationMyPage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/edittext_border"
+        android:ems="10"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextMedicalMyPage"
+        app:layout_constraintStart_toStartOf="@+id/editTextMedicalMyPage"
+        app:layout_constraintTop_toBottomOf="@+id/labelMedicationMyPage" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonCompletionMyPage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="114dp"
+        android:layout_marginEnd="114dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/radius_button_white"
+        android:minHeight="38dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="Modify"
+        android:textColor="@color/buttonTextColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <include
+        android:id="@+id/loadingLayout"
+        android:visibility="gone"
+        layout="@layout/layout_loading" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <EditText
+        android:id="@+id/editTextNameMyPage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="62dp"
+        android:layout_marginLeft="62dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginRight="62dp"
+        android:background="@drawable/edittext_border"
+        android:ems="10"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp"
+        android:hint="Name"
+        android:textColorHint="@color/buttonHintTextColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextNumberMyPage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="62dp"
+        android:layout_marginLeft="62dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginRight="62dp"
+        android:background="@drawable/edittext_border"
+        android:ems="10"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp"
+        android:hint="Phone Number"
+        android:textColorHint="@color/buttonHintTextColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNameMyPage" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonCompletionMyPageContact"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="114dp"
+        android:layout_marginEnd="114dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/radius_button_white"
+        android:minHeight="38dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="Modify"
+        android:textColor="@color/buttonTextColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <include
+        android:id="@+id/loadingLayout"
+        android:visibility="gone"
+        layout="@layout/layout_loading" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

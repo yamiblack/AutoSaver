@@ -6,17 +6,67 @@
     android:layout_height="match_parent"
     tools:context=".ui.mypage.MyPageFragment">
 
-    <TextView
-        android:id="@+id/text_notifications"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textSize="20sp"
-        android:text="mypage test"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:id="@+id/logoImageMyPage"
+        android:layout_width="150dp"
+        android:layout_height="33dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/ic_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoImageMyPage">
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonMyInfoMyPage"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/radius_button_blue_activated"
+            android:minHeight="40dp"
+            android:text="My Info"
+            android:textColor="@color/white" />
+
+        <Space
+            android:layout_width="18dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonContactsMyPage"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/radius_button_blue"
+            android:minHeight="40dp"
+            android:text="Contact"
+            android:textColor="@color/buttonTextColor" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/frameMyPage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="35dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+    </FrameLayout>
+
+    <include
+        android:id="@+id/loadingLayout"
+        android:visibility="gone"
+        layout="@layout/layout_loading" />
 </androidx.constraintlayout.widget.ConstraintLayout>
