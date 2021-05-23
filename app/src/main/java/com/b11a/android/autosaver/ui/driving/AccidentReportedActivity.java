@@ -39,7 +39,7 @@ public class AccidentReportedActivity extends AppCompatActivity implements Senso
     SmsManager smsManager = SmsManager.getDefault();
 
     private static double firstLongitude, firstLatitude, nowLongitude, nowLatitude;
-    private boolean isReported = false;
+    private boolean isReported;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +55,9 @@ public class AccidentReportedActivity extends AppCompatActivity implements Senso
         Log.e("latitude2", String.valueOf(latitude));
         Log.e("longitude2", String.valueOf(longitude));
 
-        Timer timer = new Timer(3000, 1000);
+        Timer timer = new Timer(10000, 1000);
         timer.start();
+        isReported = false;
 
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         sensorAccelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
@@ -75,9 +76,13 @@ public class AccidentReportedActivity extends AppCompatActivity implements Senso
             nowLongitude = location.getLongitude();
             nowLatitude = location.getLatitude();
 
+            Log.e("1", String.valueOf(firstLongitude));
+            Log.e("2", String.valueOf(firstLatitude));
+            Log.e("3", String.valueOf(nowLongitude));
+            Log.e("4", String.valueOf(nowLatitude));
+
             final LocationListener gpsLocationListener = new LocationListener() {
                 public void onLocationChanged(Location location) {
-
                     if (isReported) {
                         firstLongitude = 0;
                         firstLatitude = 0;
@@ -89,14 +94,15 @@ public class AccidentReportedActivity extends AppCompatActivity implements Senso
 
                         if (firstLatitude != nowLatitude || firstLongitude != nowLongitude) {
                             timer.cancel();
+                            isReported = true;
                             Intent intent = new Intent(context, AccidentSecondCancelledActivity.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
-
                         }
                     }
 
-
+                    Log.e("nowLongitude", String.valueOf(nowLongitude));
+                    Log.e("nowLatitude", String.valueOf(nowLatitude));
                 }
 
                 public void onStatusChanged(String provider, int status, Bundle extras) {
@@ -108,7 +114,6 @@ public class AccidentReportedActivity extends AppCompatActivity implements Senso
                 public void onProviderDisabled(String provider) {
                 }
             };
-
             lm.requestLocationUpdates(LocationManager.GPS_PROVIDER,
                     1000,
                     1,
@@ -117,6 +122,7 @@ public class AccidentReportedActivity extends AppCompatActivity implements Senso
                     1000,
                     1,
                     gpsLocationListener);
+
         }
 
     }
@@ -166,7 +172,7 @@ public class AccidentReportedActivity extends AppCompatActivity implements Senso
 //                    + "- 일시 : " + currentTime + "\n" + "- 위치 : 위도 " + latitude + " 경도 " + longitude + "\n" + "혈액형 : ");자
 
             Log.e("report", "사고가 발생했습니다."
-                    + "- 일시 : " + currentTime + "- 위치 : 위도 " + latitude + " 경도 " + longitude + "혈액형 : ");
+                    + "- 일시 : " + currentTime + "- 위치 : 위도 " + latitude + " 경도 " + longitude + " 혈액형 : ");
             isReported = true;
 
         }
@@ -174,6 +180,11 @@ public class AccidentReportedActivity extends AppCompatActivity implements Senso
 
     public void sendSMS(String phoneNumber, String text) {
         smsManager.sendTextMessage(phoneNumber, null, text, null, null);
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, MainActivity.class));
     }
 
 }
