@@ -55,7 +55,7 @@ public class AccidentReportedActivity extends AppCompatActivity implements Senso
         Log.e("latitude2", String.valueOf(latitude));
         Log.e("longitude2", String.valueOf(longitude));
 
-        Timer timer = new Timer(10000, 1000);
+        Timer timer = new Timer(4000, 1000);
         timer.start();
         isReported = false;
 
@@ -166,7 +166,7 @@ public class AccidentReportedActivity extends AppCompatActivity implements Senso
             Intent call = new Intent(Intent.ACTION_CALL, Uri.parse("tel:/" + telNo));
             startActivity(call);
 
-            Toast toast = Toast.makeText(getApplicationContext(), "문자 전송 완료", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(getApplicationContext(), "문자 전송 및 전화 완료", Toast.LENGTH_SHORT);
             toast.show();
 
             // 119 전화
@@ -184,6 +184,7 @@ public class AccidentReportedActivity extends AppCompatActivity implements Senso
 
             Log.e("report", "사고가 발생했습니다."
                     + "- 일시 : " + currentTime + "- 위치 : 위도 " + latitude + " 경도 " + longitude + " 혈액형 : ");
+
             isReported = true;
 
         }
