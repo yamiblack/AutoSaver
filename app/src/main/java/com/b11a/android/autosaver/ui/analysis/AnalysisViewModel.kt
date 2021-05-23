@@ -18,11 +18,6 @@ class AnalysisViewModel : ViewModel() {
     private val habitURL = kServerURL("drives/habit")
     private val client = OkHttpClient()
 
-    private val _habit = MutableLiveData<Habit>().apply {
-        value = Habit()
-    }
-    val habit: LiveData<Habit> = _habit
-
     private val _loading = MutableLiveData<Boolean>().apply {
         value = false
     }

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.EditText
 import android.widget.Spinner
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
@@ -42,6 +43,10 @@ class MyPageFragment : Fragment() {
                 binding.loadingLayout.root.visibility = View.GONE
                 requireActivity().window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
             }
+        }
+
+        viewModel.success.observe(viewLifecycleOwner) {
+            Toast.makeText(requireContext(), if (it) "Modify Success!" else "Modify Failed.", Toast.LENGTH_SHORT).show()
         }
 
         viewModel.detail.observe(viewLifecycleOwner) {

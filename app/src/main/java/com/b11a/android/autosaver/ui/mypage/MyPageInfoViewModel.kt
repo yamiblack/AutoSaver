@@ -28,9 +28,7 @@ class MyPageInfoViewModel: ViewModel() {
     }
     val loading: LiveData<Boolean> = _loading
 
-    private val _success = MutableLiveData<Boolean>().apply {
-        value = false
-    }
+    private val _success = MutableLiveData<Boolean>()
     val success: LiveData<Boolean> = _success
 
     fun loadData(userToken: String) {
