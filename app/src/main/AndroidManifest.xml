@@ -3,6 +3,8 @@
     package="com.b11a.android.autosaver">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.SEND_SMS"/>
 
     <application
         android:allowBackup="true"
@@ -14,6 +16,12 @@
         android:fullBackupContent="@xml/backup_descriptor">
         <activity android:name=".login.JoinActivity" />
         <activity android:name=".login.LoginActivity" />
+        <activity android:name=".ui.driving.DrivingActivity" />
+        <activity android:name=".ui.driving.AccidentDetectedActivity" />
+        <activity android:name=".ui.driving.AccidentFirstCancelledActivity" />
+        <activity android:name=".ui.driving.AccidentSecondCancelledActivity" />
+        <activity android:name=".ui.driving.AccidentReportedActivity" />
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">
