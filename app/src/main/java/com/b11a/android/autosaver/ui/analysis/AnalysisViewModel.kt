@@ -61,7 +61,7 @@ class AnalysisViewModel : ViewModel() {
 
     fun loadData(userToken: String) {
         val request = Request.Builder()
-            .url("$habitURL&week_num=0")
+            .url("$habitURL&week_num=1")
             .header("Authorization", userToken)
             .build()
 
