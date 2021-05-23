@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="bloodType">
-        <item>A</item>
-        <item>B</item>
-        <item>AB</item>
-        <item>O</item>
+        <item>RH+ A</item>
+        <item>RH+ B</item>
+        <item>RH+ AB</item>
+        <item>RH+ O</item>
+        <item>RH- A</item>
+        <item>RH- B</item>
+        <item>RH- AB</item>
+        <item>RH- O</item>
     </string-array>
 
     <string-array name="specialNote">
