@@ -70,14 +70,16 @@ public class AccidentReportedActivity extends AppCompatActivity implements Senso
                     0);
         } else {
             Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-            firstLongitude = location.getLongitude();
-            firstLatitude = location.getLatitude();
-            nowLongitude = location.getLongitude();
-            nowLatitude = location.getLatitude();
+
+            if (location != null) {
+                firstLongitude = location.getLongitude();
+                firstLatitude = location.getLatitude();
+                nowLongitude = location.getLongitude();
+                nowLatitude = location.getLatitude();
+            }
 
             final LocationListener gpsLocationListener = new LocationListener() {
                 public void onLocationChanged(Location location) {
-
                     if (isReported) {
                         firstLongitude = 0;
                         firstLatitude = 0;
@@ -149,6 +151,14 @@ public class AccidentReportedActivity extends AppCompatActivity implements Senso
         @Override
         public void onFinish() {
             // 문자 및 전화
+            String telNo = "+8210-8606-7225";
+
+            String msg = "사고가 발생했습니다." + "- 일시 : " + currentTime + "- 위치 : 위도 " + latitude + " 경도 " + longitude + "혈액형 : ";
+            sendSMS(telNo, msg);
+
+            Intent call = new Intent(Intent.ACTION_CALL, Uri.parse("tel:/" + telNo));
+            startActivity(call);
+
             Toast toast = Toast.makeText(getApplicationContext(), "문자 전송 완료", Toast.LENGTH_SHORT);
             toast.show();
 

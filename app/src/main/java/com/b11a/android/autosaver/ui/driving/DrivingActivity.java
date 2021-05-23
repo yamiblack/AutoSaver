@@ -1,5 +1,6 @@
 package com.b11a.android.autosaver.ui.driving;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -67,17 +68,19 @@ public class DrivingActivity extends AppCompatActivity implements SensorEventLis
 
         if (Build.VERSION.SDK_INT >= 23 &&
                 ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(DrivingActivity.this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
+            ActivityCompat.requestPermissions(DrivingActivity.this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.SEND_SMS},
                     0);
         } else {
             Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-            longitude = location.getLongitude();
-            latitude = location.getLatitude();
-            speed = location.getSpeed();
+
+            if(location != null) {
+                longitude = location.getLongitude();
+                latitude = location.getLatitude();
+                speed = location.getSpeed();
+            }
 
             final LocationListener gpsLocationListener = new LocationListener() {
                 public void onLocationChanged(Location location) {
-
                     longitude = location.getLongitude();
                     latitude = location.getLatitude();
 
