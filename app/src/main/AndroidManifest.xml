@@ -3,6 +3,8 @@
     package="com.b11a.android.autosaver">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.SEND_SMS"/>
 
     <application
         android:allowBackup="true"
@@ -10,8 +12,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AutoSaver"
+        android:theme="@style/AppTheme.NoActionBar"
         android:fullBackupContent="@xml/backup_descriptor">
+        <activity android:name=".login.JoinActivity" />
+        <activity android:name=".login.LoginActivity" />
         <activity android:name=".SplashActivity"
             android:label="@string/app_name">
             <intent-filter>
@@ -25,6 +29,11 @@
         <activity android:name=".login.JoinContactActivity" />
         <activity android:name=".login.JoinDetailActivity" />
         <activity android:name=".MainActivity"/>
+        <activity android:name=".ui.driving.DrivingActivity" />
+        <activity android:name=".ui.driving.AccidentDetectedActivity" />
+        <activity android:name=".ui.driving.AccidentFirstCancelledActivity" />
+        <activity android:name=".ui.driving.AccidentSecondCancelledActivity" />
+        <activity android:name=".ui.driving.AccidentReportedActivity" />
     </application>
 
 </manifest>
