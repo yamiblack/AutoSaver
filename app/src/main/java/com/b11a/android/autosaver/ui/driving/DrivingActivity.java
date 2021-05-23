@@ -75,8 +75,6 @@ public class DrivingActivity extends AppCompatActivity implements SensorEventLis
             latitude = location.getLatitude();
             speed = location.getSpeed();
 
-//            result.setText("처음 위도 : " + decimalFormat.format(latitude) + "\n" + "처음 경도 : " + decimalFormat.format(longitude));
-
             final LocationListener gpsLocationListener = new LocationListener() {
                 public void onLocationChanged(Location location) {
 
@@ -85,9 +83,6 @@ public class DrivingActivity extends AppCompatActivity implements SensorEventLis
 
                     staticLongitude = decimalFormat.format(longitude);
                     staticLatitude = decimalFormat.format(latitude);
-
-//                    result.setText("위도 : " + decimalFormat.format(latitude) + "\n" + "경도 : " + decimalFormat.format(longitude) + "\n"
-//                            + "속도 : " + speed);
 
                     (new Thread(new Runnable() {
 
@@ -104,7 +99,6 @@ public class DrivingActivity extends AppCompatActivity implements SensorEventLis
                                             speed = location.getSpeed();
                                             totalSpeed += speed;
                                             averageSpeed = totalSpeed / 10;
-//                                            tvSpeed.setText(getCurrentTime() + "\n" + "average : " + averageSpeed);
                                             Log.e("average", String.valueOf(averageSpeed));
                                         }
                                     });
@@ -161,10 +155,6 @@ public class DrivingActivity extends AppCompatActivity implements SensorEventLis
                 shakeTime = currentTime;
                 Toast.makeText(this, "충돌이 감지되었습니다.", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(this, AccidentDetectedActivity.class);
-
-//                Log.e("currentTime", getCurrentTime());
-//                Log.e("latitude", staticLatitude);
-//                Log.e("longitude", staticLongitude);
 
                 intent.putExtra("currentTime", getCurrentTime());
                 intent.putExtra("latitude", staticLatitude);
