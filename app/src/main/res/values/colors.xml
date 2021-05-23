@@ -28,4 +28,8 @@
 
     <color name="joinWarning">#FF0000</color>
     <color name="joinCorrect">#00FF00</color>
+
+    <color name="chart1">#027DFA</color>
+    <color name="chart2">#77DD77</color>
+    <color name="chart3">#E6B500</color>
 </resources>

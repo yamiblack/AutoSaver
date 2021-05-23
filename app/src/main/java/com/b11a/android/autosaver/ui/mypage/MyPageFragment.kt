@@ -27,7 +27,6 @@ class MyPageFragment : Fragment() {
         binding = FragmentMypageBinding.inflate(inflater)
         infoBinding = LayoutMypageInfoBinding.inflate(inflater)
         emergencyBinding = LayoutMypageEmergencyBinding.inflate(inflater)
-
         viewModel = ViewModelProvider(this).get(MyPageInfoViewModel::class.java)
 
         val userToken = kPrefs(requireContext()).getString("userToken", "")!!
