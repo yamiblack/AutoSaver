@@ -103,7 +103,7 @@
 
 ### 4-2. 사고 감지
 
-<p align="center"><img width="30%" src="https://user-images.githubusercontent.com/50551349/121240503-613e6380-c8d5-11eb-91fe-6c4a2fb9d386.jpg"/> <img width="30%" src="https://user-images.githubusercontent.com/50551349/121240636-829f4f80-c8d5-11eb-9077-1bfd211fb33f.jpg"/> <img width="30%" src="https://user-images.githubusercontent.com/50551349/121240641-8337e600-c8d5-11eb-940f-82f776db7b8e.jp"/></p>
+<p align="center"><img width="30%" src="https://user-images.githubusercontent.com/50551349/121240503-613e6380-c8d5-11eb-91fe-6c4a2fb9d386.jpg"/> <img width="30%" src="https://user-images.githubusercontent.com/50551349/121240636-829f4f80-c8d5-11eb-9077-1bfd211fb33f.jpg"/> <img width="30%" src="https://user-images.githubusercontent.com/50551349/121240641-8337e600-c8d5-11eb-940f-82f776db7b8e.jpg"/></p>
 
 - 충격이나 강한 흔들림이 감지되면 사고로 인식한다.
 - 10초 카운트 후 119, 비상연락망에게 문자를 보내고 119에 전화를 건다.
