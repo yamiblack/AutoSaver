@@ -125,7 +125,7 @@
 - Android(Kotlin & Java) 
 - OkHttp
 - MPAndroidChart
-- MVC or MVVM Architecture Pattern
-- django
+- MVC & MVVM Architecture Pattern
+- Django
 
 </br>
