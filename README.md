@@ -125,5 +125,7 @@
 - Android(Kotlin & Java) 
 - OkHttp
 - MPAndroidChart
-- Kotlin : MVVM Pattern 적용 
+- MVC or MVVM Architecture Pattern
+- django
+
 </br>
