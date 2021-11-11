@@ -2,8 +2,8 @@
 - 해커톤명 : [JunctionX Seoul 2021](https://app.hackjunction.com/events/junctionx-seoul-2021)
 - 해커톤 파트너 및 트랙 :
   - [AWS Gametech](https://aws.amazon.com/ko/gametech/)
-  - [AUTOCRYPT](https://autocrypt.co.kr/)
-  - [SI Analytics](https://www.si-analytics.ai/) : 트랙 선택
+  - [AUTOCRYPT](https://autocrypt.co.kr/) : 트랙 선택
+  - [SI Analytics](https://www.si-analytics.ai/) 
   - [Microsoft](https://www.microsoft.com/ko-kr/)
 - 기간 : 2021.05.21 ~ 2021.05.23
 - 팀명 : [B11A](https://github.com/B11A-JXS2021)
